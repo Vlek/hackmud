@@ -18,12 +18,10 @@ return
 
 ^e::
 ; Ctrl + e -> Pastes a location script in a way to be used with a cracker script.
-; mine is key and the args value I'm checking is for target.
-; This is also able to press enter to run the script roughly half the time. I will
-; have to play with it to make it more stable.
+; mine is key and the args value I'm checking is for target. It also auto-enters.
 if (loc_array.Length()) {
-	clipboard := "key {target: #s." . loc_array.Pop() . "}"
+	clipboard := "key {target: #s." . loc_array.Pop() . "}`r"
 	Sleep, 50
-	Send, ^v{Enter}
+	Send, ^v
 }
 return
